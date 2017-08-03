@@ -1,10 +1,10 @@
 export TEXINPUTS:=..:${TEXINPUTS}
 export BSTINPUTS:=..:${BSTINPUTS}
 
-all: default.pdf
+all: biblatex.pdf default.pdf
 
 clean:
-	latexmk -C default
+	latexmk -C biblatex default
 
 %.pdf: %.tex
 	latexmk -pdf -silent -pdflatex="pdflatex -shell-escape %O %S" $<

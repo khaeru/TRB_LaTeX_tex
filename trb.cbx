@@ -1,0 +1,111 @@
+\ProvidesFile{trb.cbx}[2017/08/03 TRB citation style]
+\RequireCitationStyle{numeric-comp}
+
+\ExecuteBibliographyOptions{
+  giveninits = true,
+  maxbibnames = 99,
+  sorting = none,
+  urldate = iso8601, % for biblatex 3.4 (Overleaf); otherwise edtf
+  }
+
+% Commands lightly modified from numeric.cbx:
+
+% add \itshape at ***
+\renewbibmacro*{cite:comp:comp}{%
+  \ifboolexpr{
+    ( test {\iffieldundef{labelprefix}} and test {\ifundef\cbx@lastprefix} )
+    or
+    test {\iffieldequals{labelprefix}{\cbx@lastprefix}}
+  }
+    {\ifnumequal{\thefield{labelnumber}}{\value{cbx@tempcntb}}
+       {\savefield{entrykey}{\cbx@lastkey}%
+        \savefield{labelnumber}{\cbx@lastnumber}%
+        \addtocounter{cbx@tempcnta}{1}}
+       {\ifnumequal{\thefield{labelnumber}}{\value{cbx@tempcntb}-1}
+          {}
+          {\usebibmacro{cite:dump}%
+           \ifnumgreater{\value{cbx@tempcntb}}{-1}
+             {\multicitedelim}
+             {}%
+           \printtext[bibhyperref]{%
+             \printfield{labelprefix}%
+             \itshape\printfield{labelnumber}}}}}% ***
+    {\usebibmacro{cite:comp:end}}%
+  \setcounter{cbx@tempcntb}{\thefield{labelnumber}}%
+  \savefield{labelprefix}{\cbx@lastprefix}}
+
+\renewbibmacro*{cite:comp:end}{%
+  \usebibmacro{cite:dump}%
+  \ifnumgreater{\value{cbx@tempcntb}}{-1}
+    {\multicitedelim}
+    {}%
+  \printtext[bibhyperref]{%
+    \printfield{labelprefix}%
+    \itshape\printfield{labelnumber}}}% ***
+
+\renewbibmacro*{cite:comp:inset}{%
+  \usebibmacro{cite:dump}%
+  \ifnumgreater{\value{cbx@tempcntb}}{-1}
+    {\multicitedelim}
+    {}%
+  \printtext[bibhyperref]{%
+    \printfield{labelprefix}%
+    \itshape\printfield{labelnumber}% ***
+    \printfield{entrysetcount}}%
+  \setcounter{cbx@tempcntb}{-1}}
+
+\newbibmacro*{cite:dump}{%
+  \ifnumgreater{\value{cbx@tempcnta}}{0}
+    {\ifnumgreater{\value{cbx@tempcnta}}{1}
+       {\bibrangedash}
+       {\multicitedelim}%
+     \bibhyperref[\cbx@lastkey]{%
+       \ifdef\cbx@lastprefix
+         {\printtext[labelprefix]{\cbx@lastprefix}}
+         {}%
+       \itshape\printtext[labelnumber]{\cbx@lastnumber}}}
+    {}%
+  \setcounter{cbx@tempcnta}{0}%
+  \global\undef\cbx@lastprefix}
+
+% change \bibopenbracket to \bibopenparen at ***
+\newbibmacro*{textcite}{%
+  \iffieldequals{namehash}{\cbx@lasthash}
+    {\usebibmacro{cite:comp}}
+    {\usebibmacro{cite:dump}%
+     \ifbool{cbx:parens}
+       {\bibclosebracket\global\boolfalse{cbx:parens}}
+       {}%
+     \iffirstcitekey
+       {}
+       {\textcitedelim}%
+     \usebibmacro{cite:init}%
+     \ifnameundef{labelname}
+       {\printfield[citetitle]{labeltitle}}
+       {\printnames{labelname}}%
+     \global\booltrue{cbx:parens}%
+     \printdelim{namelabeldelim}\bibopenparen% ***
+     \ifnumequal{\value{citecount}}{1}
+       {\usebibmacro{prenote}}
+       {}%
+     \usebibmacro{cite:comp}%
+     \stepcounter{textcitecount}%
+     \savefield{namehash}{\cbx@lasthash}}}
+
+% replace \mkbibbrackets with \mkbibparens at ***
+\DeclareCiteCommand{\cite}[\mkbibparens]% ***
+  {\usebibmacro{cite:init}%
+   \usebibmacro{prenote}}
+  {\usebibmacro{citeindex}%
+   \usebibmacro{cite:comp}}
+  {}
+  {\usebibmacro{cite:dump}%
+   \usebibmacro{postnote}}
+
+% Other tweaks
+
+% Like the default, but without \markboth
+\defbibheading{bibliography}[\uppercase{References}]{%
+  \section*{#1}}
+
+\endinput
