@@ -9,7 +9,7 @@ Also included are:
 ## Usage and features
 
 See the files in the `examples` directory:
-- `default.tex` — an example with default class settings, using [`natbib`](http://ctan.org/pkg/natbib) for citations and the bibliography.
+- `default.tex` — an example with default class settings, using [`natbib`](http://ctan.org/pkg/natbib) for citations and the bibliography → produces [`default.pdf`](./tree/master/examples/default.pdf).
 - `biblatex.tex` — an example using [`biblatex`](https://ctan.org/pkg/biblatex) for citations and the bibilography.
 
 ### Class options

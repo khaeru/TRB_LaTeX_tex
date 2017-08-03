@@ -7,5 +7,6 @@
 *.fls
 *.log
 *.out
+*.pdf
 *.run.xml
 *.txt
