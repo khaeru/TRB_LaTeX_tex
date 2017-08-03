@@ -1,15 +1,13 @@
-% Transportation Research Board conference paper template
-%
-% When numbered option is activated, lines are numbered.
-\documentclass[nocompat,numbered,biblatex]{trbunofficial}
-
-\usepackage[utf8]{inputenc}
+\documentclass[biblatex,nocompat]{trbunofficial}
 
 \usepackage{graphicx}
 
 % \usepackage[colorlinks=true,linkcolor=blue,citecolor=blue]{hyperref}
 % For TRB version hide links
 \usepackage[hidelinks]{hyperref}
+
+\usepackage[utf8]{inputenc}
+
 
 \addbibresource{trb_template.bib}
 
@@ -18,7 +16,6 @@
 \title{A \LaTeX\ Template for Papers Submitted to the Transportation
 Research Board}
 
-% TODO: add macros for easier formatting of \author.
 \author{%
   \textbf{David Pritchard}\\
   davidpritchard.org\\
@@ -31,13 +28,13 @@ Research Board}
 
 % If necessary modify the number of words per table or figure default is set to
 % 250 words per table and figure
-% \WordsPerTable{250}
-% \WordsPerFigure{250}
+% \setcounter{wordspertable}{250}
+% \setcounter{wordsperfigure}{250}
 
 % If words are counted manually, put that number here. This does not include
 % figures and tables. This can also be used to avoid problems with texcount
 % program i.e. if one does not have it installed.
-% \TotalWords{200}
+% \setcounter{textwords}{200}
 
 \begin{document}
 \maketitle

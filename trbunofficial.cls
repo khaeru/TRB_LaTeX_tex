@@ -8,15 +8,20 @@
   \@biblatextrue
 }
 
-\newif\if@numbered\@numberedfalse
+\newif\if@numbered
 \DeclareOption{numbered}{
   \@numberedtrue
+}
+\DeclareOption{nonumber}{
+  \@numberedfalse
 }
 
 \newif\if@trbcompat\@trbcompattrue
 \DeclareOption{nocompat}{
   \@trbcompatfalse
 }
+
+\ExecuteOptions{numbered}
 
 \ProcessOptions\relax
 
@@ -194,7 +199,6 @@
 }
 
 % Title page
-% TODO use 'titling' package instead, which provides similar features
 \newcommand{\trb@posttitle}{\vspace{3\baselineskip}}
 \newcommand{\trb@postauthor}{\vspace{2\baselineskip}}
 \newcommand{\trb@postwordcount}{\vfill}

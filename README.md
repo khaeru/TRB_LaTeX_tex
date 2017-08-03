@@ -9,7 +9,7 @@ Also included are:
 ## Usage and features
 
 See the files in the `examples` directory:
-- `default.tex` — an example with default class settings, using [`natbib`](http://ctan.org/pkg/natbib) for citations and the bibliography → produces [`default.pdf`](./tree/master/examples/default.pdf).
+- `default.tex` — an example with default class settings, using [`natbib`](http://ctan.org/pkg/natbib) for citations and the bibliography → produces [`default.pdf`](./examples/default.pdf).
 - `biblatex.tex` — an example using [`biblatex`](https://ctan.org/pkg/biblatex) for citations and the bibilography.
 
 ### Class options
@@ -20,7 +20,7 @@ See the files in the `examples` directory:
 
 The available options are:
 - `natbib` (default) or `biblatex` — use the specified package for citations and the bibliography.
-- `numbered` — number lines.
+- `numbered` (default) or `nonumber` — number lines.
 - `compat` (default) or `nocompat` — aim for slavish compliance with the features of the Information for Authors that are clearly aimed at users of Microsoft Word. This currently has the following effects:
   - Blank lines are numbered on the title page between the title, authors, word count and date.
 
@@ -82,3 +82,16 @@ This is a lighter version of the former TRB LaTeX
 version was built primarily for people using R, Sweave, and LaTeX. Therefore,
 this version is created for people who need a straight-forward LaTeX template
 for TRB papers.
+
+### Contributing
+
+Some desirable improvements would include:
+
+- Use [`titling`](https://ctan.org/pkg/titling) instead of the current, custom title page environment.
+- Add a command for each author that:
+  - Correctly formats the name and address blocks.
+  - Adds their surname to the page header.
+- Document use of [`nameref`](http://ctan.org/pkg/nameref) for cross-referencing within the document, since the *Information for Authors* does not specify section numbers.
+- Document use of [`siunitx`](https://ctan.org/pkg/siunitx) for units (per *Information for Authors* requirements on “metrication”).
+- Package for CTAN & upload.
+- Use the built-in LaTeX `abstract` environment for the abstract and keywords.
