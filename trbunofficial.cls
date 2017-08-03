@@ -1,18 +1,5 @@
-% Transportation Research Board conference paper template
-% version 2.1.1
-%
-% David R. Pritchard, http://davidpritchard.org
-%   1.0   - Mar. 2009
-%   1.1   - Sep. 2011, fixes for captions
-%   2.0   - Mar. 2012, Reorganized title page incl. automatic counters
-%   2.1   - Jul. 2015, Automatic total word counter and more formattings
-%   2.1.1 - Jan. 2016, Minor modifications and first uploaded to Github
-%   2.1.1 - May. 2016, created a lite version for people to use directly on TeX without Sweave options
-
-% Official trb manual for authors:
-% http://onlinepubs.trb.org/onlinepubs/AM/InfoForAuthors.pdf
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{trbunofficial}[2017/06/10 TRB latex template]
+\ProvidesClass{trbunofficial}[2017/08/03 TRB latex template]
 
 % Option declarations
 \newif\if@biblatex\@biblatexfalse
@@ -207,6 +194,7 @@
 }
 
 % Title page
+% TODO use 'titling' package instead, which provides similar features
 \newcommand{\trb@posttitle}{\vspace{3\baselineskip}}
 \newcommand{\trb@postauthor}{\vspace{2\baselineskip}}
 \newcommand{\trb@postwordcount}{\vfill}

@@ -1,0 +1,32 @@
+
+2017-08-03   Paul Natsuo Kishimoto <mail@paul.kishimoto.name>
+
+ * Added BibLaTeX support.
+
+2017-06-20   v3.1   Aleksandar Trifunovic
+
+ * Added trbunofficial.cls
+
+2017-06-20   v2.1.1  Ross Wang <cw@crosswang.org>
+
+ * Minor modifications.
+ * TeX-only template/"lite" version for non-R/Sweave users.
+ * Uploaded to Github.
+
+2015-07  v2.1  Ross Wang <cw@crosswang.org>
+
+ * Automatic total word counter.
+ * More formatting.
+
+2012-03  v2.0  Macfarlane <>
+
+ * Reorganized title page including automatic counters.
+ * Documentation.
+
+2011-03  v1.1  David R. Pritchard <drpritch@gmail.com>
+
+ * Fixes for captions.
+
+2009-09  v1.0  David R. Pritchard <drpritch@gmail.com>
+
+ * Initial work.
