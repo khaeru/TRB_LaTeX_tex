@@ -1,6 +1,6 @@
 % Transportation Research Board conference paper template
 % version 2.1.1
-% 
+%
 % David R. Pritchard, http://davidpritchard.org
 %   1.0   - Mar. 2009
 %   1.1   - Sep. 2011, fixes for captions
@@ -62,13 +62,13 @@
 }
 
 % Page layout
-%------------------------------------------------------------------------------ 
+%------------------------------------------------------------------------------
 \geometry{textwidth=6.5in, textheight=9.0in}
 \geometry{top=1in, left=1in}
 \geometry{headheight=0.3in, headsep=0.2in}
 
 % Text formatting
-%------------------------------------------------------------------------------ 
+%------------------------------------------------------------------------------
 \setlength{\parindent}{0.5in}
 
 
@@ -102,7 +102,7 @@
 }
 
 % LISTS
-%------------------------------------------------------------------------------ 
+%------------------------------------------------------------------------------
 % Adjust lists a little. Not quite perfectly fitting TRB style, but vaguely
 % close at least.
 \setlist[1]{labelindent=0.5in,leftmargin=*}
@@ -110,7 +110,7 @@
 \setlist{nosep} % eliminate extra verticle spacings between items
 
 % CAPTIONS
-%------------------------------------------------------------------------------ 
+%------------------------------------------------------------------------------
 % Get the captions right. Authors must still be careful to use "Title Case"
 % for table captions, and "Sentence case." for figure captions.
 \renewcommand{\fnum@figure}{\bfseries FIGURE~\thefigure}
@@ -134,12 +134,12 @@
 
 
 % LINE NUMBERING
-%------------------------------------------------------------------------------ 
+%------------------------------------------------------------------------------
 % Adjust the fond of the line numbering
 \renewcommand\linenumberfont{\normalfont\small}
 
 % COUNTERS
-%------------------------------------------------------------------------------ 
+%------------------------------------------------------------------------------
 % TRB requires the total number of words, figures, and tables to be displayed
 % on the title page. This is possible under the totcount and the xparse
 % packages on CTAN.
