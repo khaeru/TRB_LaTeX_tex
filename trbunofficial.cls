@@ -71,14 +71,6 @@
 
 % amsmath: Equations
 \RequirePackage[fleqn]{amsmath}
-\setlength{\mathindent}{0in}
-% Set spacing before and after equation to be 0
-\g@addto@macro\normalsize{%
-  \setlength\abovedisplayskip{0pt}
-  \setlength\belowdisplayskip{0pt}
-  \setlength\abovedisplayshortskip{0pt}
-  \setlength\belowdisplayshortskip{0pt}
-}
 
 % enumitem: Lists
 % Adjust lists a little. Not quite perfectly fitting TRB style, but vaguely
@@ -118,7 +110,7 @@
 
 % lineno: Line numbering
 \if@numbered
-\RequirePackage[pagewise, mathlines]{lineno}
+\RequirePackage[pagewise,mathlines]{lineno}
 % Adjust the font of the line numbering
 \renewcommand\linenumberfont{\normalfont\small}
 \linenumbers
